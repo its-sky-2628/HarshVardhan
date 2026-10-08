@@ -1,0 +1,5 @@
+import { useState } from 'react'
+import { Play } from 'lucide-react'
+export default function VideoCard({video}){ const [playing,setPlaying]=useState(false); return <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[.035]">
+  {!playing ? <button onClick={()=>setPlaying(true)} className="relative block w-full text-left" aria-label={`Play ${video.title}`}><img src={video.poster} alt="Video testimonial poster" loading="lazy" className="aspect-video w-full object-cover transition duration-700 group-hover:scale-105"/><span className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent"/><span className="absolute bottom-5 left-5 flex h-14 w-14 items-center justify-center rounded-full bg-white text-black shadow-xl transition group-hover:scale-110"><Play fill="currentColor" size={20}/></span><span className="absolute bottom-5 right-5 max-w-[65%] text-sm font-semibold">{video.title}</span></button> : <video className="aspect-video w-full object-cover" src={video.src} poster={video.poster} controls autoPlay playsInline preload="metadata" />}
+</div> }

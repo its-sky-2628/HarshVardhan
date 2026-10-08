@@ -1,0 +1,9 @@
+{
+  "name": "Harsh Vardhan Singh — Growth & Performance Marketing",
+  "short_name": "HVS Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07070a",
+  "theme_color": "#07070a",
+  "icons": [{"src":"/assets/images/profile.webp","sizes":"512x512","type":"image/webp","purpose":"any maskable"}]
+}

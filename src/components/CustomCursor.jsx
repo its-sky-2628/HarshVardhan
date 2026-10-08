@@ -1,0 +1,2 @@
+import { useEffect, useRef } from 'react'
+export default function CustomCursor(){ const dot=useRef(), ring=useRef(); useEffect(()=>{ const move=e=>{ if(dot.current) {dot.current.style.left=e.clientX+'px';dot.current.style.top=e.clientY+'px'} if(ring.current){ring.current.animate({left:e.clientX+'px',top:e.clientY+'px'},{duration:280,fill:'forwards'})} }; window.addEventListener('pointermove',move); return()=>window.removeEventListener('pointermove',move)},[]); return <><div ref={dot} className="cursor-dot"/><div ref={ring} className="cursor-ring"/></> }
