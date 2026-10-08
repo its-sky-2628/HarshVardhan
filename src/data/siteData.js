@@ -37,7 +37,7 @@ export const siteData = {
     '/assets/images/IMG_6386.webp', '/assets/images/IMG_8466.webp', '/assets/images/IMG_9513.webp', '/assets/images/IMG_9514.webp', '/assets/images/IMG_9583.webp', '/assets/images/IMG_4267.webp'
   ],
   reviewVideos: [
-    { src: '/assets/videos/review-5799.mp4', poster: '/assets/images/review-5799-poster.jpg', title: 'Client reaction — Maldives campaign' },
+    { src: '/assets/videos/review-5799.mp4', poster: '/assets/images/review-5799-poster.jpg', title: 'Client reaction — Meta Ads' },
     { src: '/assets/videos/review-5800.mp4', poster: '/assets/images/review-5800-poster.jpg', title: 'Client testimonial — growth results' },
     { src: '/assets/videos/review-5801.mp4', poster: '/assets/images/review-5801-poster.jpg', title: 'Client testimonial — performance' }
   ],

@@ -530,7 +530,7 @@ ${formData.get("message") || ""}`
 
                     <p className="mt-3 text-sm leading-6 text-white/45">
                       {isFollowerStat && !isNonFollowerStat
-                        ? "Last month"
+                        ? "Last month followers gained"
                         : isNonFollowerStat
                         ? "Non-follower reach on a 30-day snapshot"
                         : stat.label}
