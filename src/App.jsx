@@ -11,7 +11,6 @@ import Lenis from "lenis";
 
 import {
   ArrowRight,
-  BarChart3,
   CheckCircle2,
   ChevronDown,
   ExternalLink,
@@ -43,6 +42,7 @@ const nav = [
   ["home", "Home"],
   ["about", "About"],
   ["services", "Services"],
+  ["video-testimonials", "Video Testimonials"],
   ["work", "Work"],
   ["reviews", "Reviews"],
   ["contact", "Contact"],
@@ -613,76 +613,42 @@ ${formData.get("message") || ""}`
         </Section>
 
         {/* =========================
-            SKILLS
+            VIDEO TESTIMONIALS
         ========================== */}
 
         <Section
-          id="skills"
-          eyebrow="03 / Capabilities"
-          title="A stack designed for attention + action."
+          id="video-testimonials"
+          eyebrow="03 / Video Testimonials"
+          title="Hear it from the people behind the numbers."
+          className="bg-[radial-gradient(circle_at_50%_0%,rgba(139,92,246,.12),transparent_45%)]"
         >
-          <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
-            <div className="glass rounded-[2rem] p-7 sm:p-9">
-              <p className="leading-7 text-white/55">
-                From the hook to the ad set, every layer is
-                connected. The goal is a growth loop: better
-                creative → better attention → better audience
-                signals → better business outcomes.
+          <div className="mb-7 flex items-end justify-between gap-4">
+            <div>
+              <p className="max-w-2xl text-lg leading-8 text-white/45">
+                Real people. Real experiences. Real results.
               </p>
+            </div>
 
-              <div className="mt-7 grid grid-cols-2 gap-3">
-                <div className="rounded-2xl bg-white/5 p-4">
-                  <BarChart3 className="text-cyan-300" />
+            <div className="hidden gap-2 sm:flex">
+              <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/40">
+                Lazy loaded
+              </span>
 
-                  <p className="mt-4 text-sm font-semibold">
-                    Measure
-                  </p>
-                </div>
+              <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/40">
+                Optimized MP4
+              </span>
+            </div>
+          </div>
 
-                <div className="rounded-2xl bg-white/5 p-4">
-                  <Target className="text-violet-300" />
-
-                  <p className="mt-4 text-sm font-semibold">
-                    Target
-                  </p>
-                </div>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {data.reviewVideos.map((video) => (
+              <div
+                key={video.src}
+                className="min-w-0 w-full"
+              >
+                <VideoCard video={video} />
               </div>
-            </div>
-
-            <div className="space-y-5">
-              {data.skills.map(([name, percentage], index) => (
-                <div key={name}>
-                  <div className="mb-2 flex justify-between text-sm">
-                    <span className="font-semibold">
-                      {name}
-                    </span>
-
-                    <span className="text-white/40">
-                      {percentage}%
-                    </span>
-                  </div>
-
-                  <div className="h-2 overflow-hidden rounded-full bg-white/7">
-                    <motion.div
-                      initial={{
-                        width: 0,
-                      }}
-                      whileInView={{
-                        width: `${percentage}%`,
-                      }}
-                      viewport={{
-                        once: true,
-                      }}
-                      transition={{
-                        duration: 1,
-                        delay: index * 0.06,
-                      }}
-                      className="h-full rounded-full bg-gradient-to-r from-violet-500 to-cyan-300"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </Section>
 
@@ -820,47 +786,6 @@ ${formData.get("message") || ""}`
                 </div>
               </motion.button>
             ))}
-          </div>
-
-          {/* =========================
-              VIDEO TESTIMONIALS
-          ========================== */}
-
-          <div className="mt-14">
-            <div className="mb-5 flex items-end justify-between gap-4">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[.25em] text-violet-300">
-                  Video testimonials
-                </p>
-
-                <h3 className="mt-2 text-2xl font-bold">
-                  Hear it from the people behind the
-                  numbers.
-                </h3>
-              </div>
-
-              <div className="hidden gap-2 sm:flex">
-                <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/40">
-                  Lazy loaded
-                </span>
-
-                <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/40">
-                  Optimized MP4
-                </span>
-              </div>
-            </div>
-
-            {/* Responsive video grid */}
-            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-              {data.reviewVideos.map((video) => (
-                <div
-                  key={video.src}
-                  className="min-w-0"
-                >
-                  <VideoCard video={video} />
-                </div>
-              ))}
-            </div>
           </div>
 
           <div className="relative mx-auto mt-14 max-w-3xl text-center">
